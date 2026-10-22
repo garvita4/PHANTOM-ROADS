@@ -38,7 +38,7 @@ body {
 
 /* ========== NAV ========== */
 .nav {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 100;
   display: flex;
@@ -117,96 +117,83 @@ body {
 .menu-btn {
   display: none;
   flex-direction: column;
-  justify-content: center;
-  gap: 5px;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
-  z-index: 100;
+  padding: 0;
+  z-index: 20;
 }
 
 .menu-btn span {
-  display: block;
-  width: 22px;
+ display: block;
+  width: 100%;
   height: 2px;
   background: #f4f1eb;
-  transition: all 0.3s ease;
   border-radius: 2px;
+  transition: 0.3s;
 }
 
-.menu-btn.active span:nth-child(1){
-  transform: translateY(7px);
-  rotate: 45 deg;
-} 
-.menu-btn.active span:nth-child(2){
+/* X animation */
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-btn.active span:nth-child(2) {
   opacity: 0;
 }
-.menu-btn.active span:nth-child(3){
-  transform: translateY(-7px);
-  rotate: -45 deg;
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-.mobile-menu{
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 18, 24, 0.94);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    z-index: 90;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
-  }
-  .mobile-menu :active{
-    opacity: 1;
-    visibility: visible;
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 62px;                    /* closer to the navbar */
+  right: 16px;
+  background: rgba(255, 255, 255, 0.08);   /* lighter */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 8px 0;
+  min-width: 170px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: all 0.25s ease;
+  z-index: 30;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
 
-  }
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
-  .mobile-menu-content a{
-    color: #f4f1eb;
-    text-decoration: none;
-    font-size: 28px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    opacity: 0;
-    transform: translateY(18px);
-    transition: all 0.4 ease;
-  }
-  .mobile-menu.active .mobile-menu-content a{
-    opacity: 1;
-    transform: translateY(0);
-  }
+.dropdown-menu a {
+  color: #f4f1eb;
+  text-decoration: none;
+  padding: 11px 20px;
+  font-size: 15px;
+  font-weight: 400;
+  transition: background 0.2s;
+}
 
-  /*stagger animation*/
-  .mobile-menu.active .mobile-menu-content a:nth-child(1) {
-    transition-delay: 0.08s;
-  }
-  .mobile-menu.active .mobile-menu-content a:nth-child(2) {
-    transition-delay: 0.14s;
-  }
-  .mobile-menu.active .mobile-menu-content a:nth-child(3) {
-    transition-delay: 0.20s;
-  }
-  .mobile-menu.active .mobile-menu-content a:nth-child(4) { transition-delay: 0.26s;
-  }
-  .mobile-menu.active .mobile-menu-content a:nth-child(5) { transition-delay: 0.32s; 
-  }
-  .mobile-sign-in{
-  display: inline-flex !important;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-  font-size: 17px !important;
-  font-family: 'Inter', sans-serif !important;
-  border: 1px solid rgba(244, 241, 235, 0.3);
-  padding: 11px 26px;
-  border-radius: 999px;
-  }
+.dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Optional: make the last item (Sign in) slightly different */
+.dropdown-menu a:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 4px;
+  padding-top: 13px;
+}
 
 /* ========== HERO CONTENT ========== */
 .hero-content {
