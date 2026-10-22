@@ -11,7 +11,7 @@
 
   <section class="hero">
     <nav class="nav">
-      <div class="logo">Phantom Roads</div>
+      <div class="logo">Phantom <span>Roads</span></div>
 
       <!-- Desktop links -->
       <div class="nav-links">
@@ -21,7 +21,12 @@
         <a href="#">About</a>
       </div>
 
-      <a href="#" class="sign-in">Sign in</a>
+      <a href="#" class="sign-in">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+        Sign in</a>
 
       <!-- Mobile menu button -->
       <button class="menu-btn" aria-label="Open menu">
@@ -31,9 +36,19 @@
       </button>
     </nav>
 
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+          <a href="#">Explore</a>
+          <a href="#">Map</a>
+          <a href="#">Stories</a>
+          <a href="#">About</a>
+          <a href="#" class="mobile-sign-in">Sign in</a>
+        </div>
+      </div>
+
     <div class="hero-content">
-      <h1>Phantom Roads</h1>
-      <p class="subtitle">Step into the real world<br>through your screen</p>
+      <h1>The world is closer than it looks</h1>
+      <p class="subtitle">Step into real streets and start exploring<br>through your screen</p>
       <a href="#journey" class="cta-btn">Begin your journey →</a>
     </div>
 
