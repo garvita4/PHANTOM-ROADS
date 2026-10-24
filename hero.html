@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phantom Roads</title>
   <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="scroll1.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -54,6 +55,83 @@
 
     <div class="scroll-hint">Scroll</div>
   </section>
+
+  <section class="scroll-section scroll-1" id="scroll1">
+
+  <!-- Left Progress Steps -->
+  <div class="progress-steps">
+    <div class="step active">
+      <div class="step-dot"></div>
+      <div class="step-label">
+        <span class="step-number">01</span>
+        <span class="step-name">Notice</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"></div>
+      <div class="step-label">
+        <span class="step-number">02</span>
+        <span class="step-name">Explore</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-dot"></div>
+      <div class="step-label">
+        <span class="step-number">03</span>
+        <span class="step-name">Feel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Center Content -->
+  <div class="scroll-content">
+    <h2 class="scroll-title">These roads are real.</h2>
+    <p class="scroll-subtitle">
+      Every turn holds a story.<br>
+      Follow the little things that catch your eye.
+    </p>
+  </div>
+
+  <!-- Right Detail Card -->
+  <div class="detail-card">
+    <div class="detail-card-header">
+      <span class="detail-icon">✦</span>
+      A detail worth finding
+    </div>
+    <div class="detail-image">
+      <img src="images/detail-street.jpg" alt="Street detail">
+    </div>
+    <p class="detail-text">
+      Some signs aren't meant to be seen by everyone.<br>
+      This one waits for the curious.
+    </p>
+    <button class="detail-btn">Reveal detail →</button>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <div class="context-chip">
+      <span>19:42</span>
+      <span class="separator">·</span>
+      <span>📍 Lisbon, Portugal</span>
+    </div>
+    <div class="scroll-hint-mini">
+      SCROLL
+      <span class="scroll-arrow">↓</span>
+    </div>
+    <div class="sound-chip">
+      <span>♪</span>
+      <span>Ambient Sound</span>
+      <span class="sound-status">On</span>
+    </div>
+  </div>
+
+</section>
+
   <script src="hero.js"></script>
+  <script src="scroll1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 </body>
 </html>
