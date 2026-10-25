@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phantom Roads</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="destinations.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1218'/%3E%3Cpath d='M18 44 32 18l14 26' fill='none' stroke='%236ec8b8' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
@@ -17,7 +16,7 @@
     <!-- Desktop links -->
     <div class="nav-links">
       <a href="#">Explore</a>
-      <a href="#city-selection">Map</a>
+      <a href="#">Map</a>
       <a href="#">Stories</a>
       <a href="#">About</a>
     </div>
@@ -39,7 +38,7 @@
 
   <div class="dropdown-menu" id="mobileMenu">
     <a href="#">Explore</a>
-    <a href="#city-selection">Map</a>
+    <a href="#">Map</a>
     <a href="#">Stories</a>
     <a href="#">About</a>
     <a href="#" class="mobile-sign-in">Sign in</a>
@@ -67,9 +66,9 @@
       <div class="hero-content">
         <p class="hero-brand" aria-label="Phantom Roads">Phantom Roads</p>
         <div class="hero-copy">
-          <h1>The world is closer<br>than it looks</h1>
+          <h1>The world is closer than it looks</h1>
           <p class="subtitle">Step into real streets and start exploring through your screen.</p>
-          <a href="#scroll1" class="cta-btn">Begin your journey <span class="cta-arrow" aria-hidden="true">→</span></a>
+          <a href="#scroll1" class="cta-btn">Begin your journey →</a>
         </div>
       </div>
 
@@ -316,7 +315,7 @@
             <span class="destination-dot"></span>
             <span class="destination-dot"></span>
           </div>
-          <a class="detail-btn destination-btn" href="#city-selection">Choose a city →</a>
+          <button class="detail-btn destination-btn" data-next-page="city-selection">Choose a city →</button>
         </div>
 
         <p class="destination-credits">
@@ -347,114 +346,9 @@
 
   </div>
 
-  <section class="city-selection" id="city-selection" aria-labelledby="city-title">
-    <div class="city-selection-bg" aria-hidden="true">
-      <img class="city-bg-slide is-active" src="images/scroll3.jpg" alt="" loading="lazy" style="--bg-focus: center 55%;">
-      <img class="city-bg-slide" src="images/cities/lisbon.jpg" alt="" loading="lazy" style="--bg-focus: 50% 52%;">
-      <img class="city-bg-slide" src="images/cities/newyork.jpg" alt="" loading="lazy" style="--bg-focus: 50% 52%;">
-      <img class="city-bg-slide" src="images/cities/paris.jpg" alt="" loading="lazy" style="--bg-focus: 50% 44%;">
-      <img class="city-bg-slide" src="images/cities/istanbul.jpg" alt="" loading="lazy" style="--bg-focus: 50% 40%;">
-      <img class="city-bg-slide" src="images/cities/rio.jpg" alt="" loading="lazy" style="--bg-focus: 50% 55%;">
-    </div>
-
-    <div class="city-selection-inner">
-      <header class="city-selection-header">
-        <p class="city-kicker"><span>05</span> Destinations</p>
-        <h1 class="city-title" id="city-title">Choose your city.</h1>
-        <p class="city-subtitle">Phantom Roads awaits beyond the streets you know.</p>
-      </header>
-
-      <div class="city-grid">
-        <button type="button" class="city-card" data-city="lisbon" aria-label="Choose Lisbon, Portugal" aria-pressed="false">
-          <span class="city-card-media">
-            <img src="images/cities/lisbon.jpg" alt="" loading="lazy" style="--city-focus: 50% 52%;">
-          </span>
-          <span class="city-card-shade" aria-hidden="true"></span>
-          <span class="city-card-index">01</span>
-          <span class="city-card-body">
-            <span class="city-card-name">Lisbon</span>
-            <span class="city-card-country">Portugal</span>
-          </span>
-          <span class="city-card-cta">Enter <span aria-hidden="true">→</span></span>
-        </button>
-
-        <button type="button" class="city-card" data-city="newyork" aria-label="Choose New York, United States" aria-pressed="false">
-          <span class="city-card-media">
-            <img src="images/cities/newyork.jpg" alt="" loading="lazy" style="--city-focus: 50% 52%;">
-          </span>
-          <span class="city-card-shade" aria-hidden="true"></span>
-          <span class="city-card-index">02</span>
-          <span class="city-card-body">
-            <span class="city-card-name">New York</span>
-            <span class="city-card-country">United States</span>
-          </span>
-          <span class="city-card-cta">Enter <span aria-hidden="true">→</span></span>
-        </button>
-
-        <button type="button" class="city-card" data-city="paris" aria-label="Choose Paris, France" aria-pressed="false">
-          <span class="city-card-media">
-            <img src="images/cities/paris.jpg" alt="" loading="lazy" style="--city-focus: 50% 44%;">
-          </span>
-          <span class="city-card-shade" aria-hidden="true"></span>
-          <span class="city-card-index">03</span>
-          <span class="city-card-body">
-            <span class="city-card-name">Paris</span>
-            <span class="city-card-country">France</span>
-          </span>
-          <span class="city-card-cta">Enter <span aria-hidden="true">→</span></span>
-        </button>
-
-        <button type="button" class="city-card" data-city="istanbul" aria-label="Choose Istanbul, Türkiye" aria-pressed="false">
-          <span class="city-card-media">
-            <img src="images/cities/istanbul.jpg" alt="" loading="lazy" style="--city-focus: 50% 40%;">
-          </span>
-          <span class="city-card-shade" aria-hidden="true"></span>
-          <span class="city-card-index">04</span>
-          <span class="city-card-body">
-            <span class="city-card-name">Istanbul</span>
-            <span class="city-card-country">Türkiye</span>
-          </span>
-          <span class="city-card-cta">Enter <span aria-hidden="true">→</span></span>
-        </button>
-
-        <button type="button" class="city-card" data-city="rio" aria-label="Choose Rio de Janeiro, Brazil" aria-pressed="false">
-          <span class="city-card-media">
-            <img src="images/cities/rio.jpg" alt="" loading="lazy" style="--city-focus: 50% 55%;">
-          </span>
-          <span class="city-card-shade" aria-hidden="true"></span>
-          <span class="city-card-index">05</span>
-          <span class="city-card-body">
-            <span class="city-card-name">Rio</span>
-            <span class="city-card-country">Brazil</span>
-          </span>
-          <span class="city-card-cta">Enter <span aria-hidden="true">→</span></span>
-        </button>
-      </div>
-
-      <footer class="city-selection-footer">
-        <p class="city-count"><span>05</span> cities / one road</p>
-        <p class="city-status" role="status" aria-live="polite"></p>
-        <details class="city-credits">
-          <summary>Photo credits</summary>
-          <div class="city-credits-panel">
-            <p>
-              <a href="https://commons.wikimedia.org/wiki/File:Lissabon_-_Alfama_-_Largo_de_Santa_Luzia_-_Streetcar_-_2.jpg" target="_blank" rel="noreferrer">Lisbon</a>: Ingo Mehling, CC BY-SA 4.0.
-              <a href="https://commons.wikimedia.org/wiki/File:New_York_City_at_night_HDR.jpg" target="_blank" rel="noreferrer">New York</a>: Paulo Barcellos Jr., CC BY-SA 2.0.
-              <a href="https://commons.wikimedia.org/wiki/File:Tour_eiffel_at_sunrise_from_the_trocadero.jpg" target="_blank" rel="noreferrer">Paris</a>: Tristan Nitot, CC BY-SA 3.0.
-              <a href="https://commons.wikimedia.org/wiki/File:Galata_Tower_January_2015.JPG" target="_blank" rel="noreferrer">Istanbul</a>: Martin Falbisoner, CC BY-SA 4.0.
-              <a href="https://commons.wikimedia.org/wiki/File:Copacabana,_Rio_de_Janeiro.jpg" target="_blank" rel="noreferrer">Rio</a>: Wilfredor, CC0.
-              Images cropped.
-            </p>
-          </div>
-        </details>
-      </footer>
-    </div>
-  </section>
-
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
-  <script src="desti.js"></script>
 </body>
 </html>
