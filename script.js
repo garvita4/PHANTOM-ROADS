@@ -553,9 +553,4 @@ if (nav) {
       option.setAttribute('aria-pressed', 'true');
     });
   });
-
-  const destinationButton = document.querySelector('.destination-btn');
-  if (destinationButton) {
-    destinationButton.dataset.nextPage = destinationButton.dataset.nextPage || 'city-selection';
-  }
 })();
