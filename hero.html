@@ -4,134 +4,296 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phantom Roads</title>
-  <link rel="stylesheet" href="hero.css" />
-  <link rel="stylesheet" href="scroll1.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <section class="hero">
-    <nav class="nav">
-      <div class="logo">Phantom <span>Roads</span></div>
+  <nav class="nav">
+    <div class="logo">Phantom <span>Roads</span></div>
 
-      <!-- Desktop links -->
-      <div class="nav-links">
-        <a href="#">Explore</a>
-        <a href="#">Map</a>
-        <a href="#">Stories</a>
-        <a href="#">About</a>
-      </div>
-
-      <a href="#" class="sign-in">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-      <circle cx="12" cy="7" r="4"/>
-    </svg>
-        Sign in</a>
-
-      <!-- Mobile menu button -->
-      <button class="menu-btn" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-
-    <div class="dropdown-menu" id="mobileMenu">
-        
-          <a href="#">Explore</a>
-          <a href="#">Map</a>
-          <a href="#">Stories</a>
-          <a href="#">About</a>
-          <a href="#" class="mobile-sign-in">Sign in</a>
-        
-      </div>
-
-    <div class="hero-content">
-      <h1>The world is closer than it looks</h1>
-      <p class="subtitle">Step into real streets and start exploring<br>through your screen</p>
-      <a href="#journey" class="cta-btn">Begin your journey →</a>
+    <!-- Desktop links -->
+    <div class="nav-links">
+      <a href="#">Explore</a>
+      <a href="#">Map</a>
+      <a href="#">Stories</a>
+      <a href="#">About</a>
     </div>
 
-    <div class="scroll-hint">Scroll</div>
-  </section>
+    <a href="#" class="sign-in">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+      Sign in</a>
 
-  <section class="scroll-section scroll-1" id="scroll1">
+    <!-- Mobile menu button -->
+    <button class="menu-btn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-  <!-- Left Progress Steps -->
-  <div class="progress-steps">
-    <div class="step active">
-      <div class="step-dot"></div>
-      <div class="step-label">
-        <span class="step-number">01</span>
-        <span class="step-name">Notice</span>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-dot"></div>
-      <div class="step-label">
-        <span class="step-number">02</span>
-        <span class="step-name">Explore</span>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-dot"></div>
-      <div class="step-label">
-        <span class="step-number">03</span>
-        <span class="step-name">Feel</span>
-      </div>
-    </div>
+  <div class="dropdown-menu" id="mobileMenu">
+    <a href="#">Explore</a>
+    <a href="#">Map</a>
+    <a href="#">Stories</a>
+    <a href="#">About</a>
+    <a href="#" class="mobile-sign-in">Sign in</a>
   </div>
 
-  <!-- Center Content -->
-  <div class="scroll-content">
-    <h2 class="scroll-title">These roads are real.</h2>
-    <p class="scroll-subtitle">
-      Every turn holds a story.<br>
-      Follow the little things that catch your eye.
-    </p>
+  <div class="journey" id="journey">
+
+    <div class="city-stage" aria-hidden="true">
+      <div class="city-bg" data-bg="hero">
+        <img src="images/hero.jpg" alt="" draggable="false">
+      </div>
+      <div class="city-bg" data-bg="notice">
+        <img src="images/scroll1.jpg" alt="" draggable="false">
+      </div>
+      <div class="city-bg" data-bg="explore">
+        <img src="images/scroll2.jpg" alt="" draggable="false">
+      </div>
+      <div class="city-bg" data-bg="feel">
+        <img src="images/scroll3.jpg" alt="" draggable="false">
+      </div>
+      <div class="city-shade"></div>
+    </div>
+
+    <section class="hero scene is-current" id="hero" data-scene="hero">
+      <div class="hero-content">
+        <h1>The world is closer than it looks</h1>
+        <p class="subtitle">Step into real streets and start exploring<br>through your screen</p>
+        <a href="#scroll1" class="cta-btn">Begin your journey →</a>
+      </div>
+
+      <div class="scroll-hint">Scroll</div>
+    </section>
+
+    <section class="scroll-section scroll-1 scene" id="scroll1" data-scene="notice">
+
+      <!-- Left Progress Steps -->
+      <div class="progress-steps">
+        <div class="step active">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">01</span>
+            <span class="step-name">Notice</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">02</span>
+            <span class="step-name">Explore</span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">03</span>
+            <span class="step-name">Feel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left Content -->
+      <div class="scroll-content">
+        <h2 class="scroll-title">These roads are real.</h2>
+        <p class="scroll-subtitle">
+          Every turn holds a story.<br>
+          Follow the little things that catch your eye.
+        </p>
+      </div>
+
+      <!-- Right Detail Card -->
+      <div class="detail-card">
+        <div class="detail-card-header">
+          <span class="detail-icon">✦</span>
+          A detail worth finding
+        </div>
+        <div class="detail-image">
+          <img src="images/scroll1.jpg" alt="Street detail">
+        </div>
+        <p class="detail-text">
+          Some signs aren't meant to be seen by everyone.<br>
+          This one waits for the curious.
+        </p>
+        <button class="detail-btn">Reveal detail →</button>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="bottom-bar">
+        <div class="context-chip">
+          <span>19:42</span>
+          <span class="separator">·</span>
+          <span>📍 Lisbon, Portugal</span>
+        </div>
+        <div class="scroll-hint-mini">
+          SCROLL
+          <span class="scroll-arrow">↓</span>
+        </div>
+        <div class="sound-chip">
+          <span>♪</span>
+          <span>Ambient Sound</span>
+          <span class="sound-status">On</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="scroll-section scroll-2 scene" id="scroll2" data-scene="explore">
+      <div class="progress-steps">
+        <div class="step completed">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">01</span>
+            <span class="step-name">Notice</span>
+          </div>
+        </div>
+        <div class="step active">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">02</span>
+            <span class="step-name">Explore</span>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">03</span>
+            <span class="step-name">Feel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-content">
+        <h2 class="scroll-title">Move the way you want.</h2>
+        <p class="scroll-subtitle">
+          Drive through the city or<br>
+          walk its quiet corners.
+        </p>
+      </div>
+
+      <div class="mode-card">
+        <div class="mode-card-header">Choose your mode</div>
+
+        <div class="mode-options">
+          <div class="mode-option active" data-mode="driving">
+            <div class="mode-image">
+              <img src="images/scroll2.jpg" alt="Driving">
+            </div>
+            <div class="mode-info">
+              <div class="mode-icon">🚗</div>
+              <div class="mode-name">Driving</div>
+              <div class="mode-desc">Flow with the streets.</div>
+            </div>
+          </div>
+
+          <div class="mode-option" data-mode="walking">
+            <div class="mode-image">
+              <img src="images/scroll3.jpg" alt="Walking">
+            </div>
+            <div class="mode-info">
+              <div class="mode-icon">🚶</div>
+              <div class="mode-name">Walking</div>
+              <div class="mode-desc">Savor the details.</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="mode-btn">Try the feeling →</button>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="bottom-bar">
+        <div class="context-chip">
+          <span>18:42</span>
+          <span class="dot">·</span>
+          <span>Alfama, Lisbon</span>
+        </div>
+
+        <div class="scroll-hint-mini">SCROLL</div>
+
+        <div class="sound-chip">
+          <span>♪</span>
+          <span>Ambient</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-section scroll-3 scene" id="scroll3" data-scene="feel">
+
+      <div class="progress-steps">
+        <div class="step completed">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">01</span>
+            <span class="step-name">Notice</span>
+          </div>
+        </div>
+        <div class="step completed">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">02</span>
+            <span class="step-name">Explore</span>
+          </div>
+        </div>
+        <div class="step active">
+          <div class="step-dot"></div>
+          <div class="step-label">
+            <span class="step-number">03</span>
+            <span class="step-name">Feel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-content">
+        <h2 class="scroll-title">Where to first?</h2>
+        <p class="scroll-subtitle">
+          Every city is only a scroll away.
+        </p>
+      </div>
+
+      <div class="detail-card destination-card">
+        <div class="detail-card-header">
+          <span class="detail-icon">✦</span>
+          Destination preview
+        </div>
+        <div class="detail-image">
+          <img src="images/scroll3.jpg" alt="Lisbon at night">
+        </div>
+        <p class="detail-text">
+          Lisbon, Portugal
+        </p>
+        <button class="detail-btn destination-btn" data-next-page="city-selection">Choose a city →</button>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="bottom-bar">
+        <div class="context-chip">
+          <span>21:10</span>
+          <span class="separator">·</span>
+          <span>Lisbon, Portugal</span>
+        </div>
+
+        <div class="scroll-hint-mini">SCROLL</div>
+
+        <div class="sound-chip">
+          <span>♪</span>
+          <span>Ambient</span>
+        </div>
+      </div>
+    </section>
+
   </div>
 
-  <!-- Right Detail Card -->
-  <div class="detail-card">
-    <div class="detail-card-header">
-      <span class="detail-icon">✦</span>
-      A detail worth finding
-    </div>
-    <div class="detail-image">
-      <img src="images/detail-street.jpg" alt="Street detail">
-    </div>
-    <p class="detail-text">
-      Some signs aren't meant to be seen by everyone.<br>
-      This one waits for the curious.
-    </p>
-    <button class="detail-btn">Reveal detail →</button>
-  </div>
-
-  <!-- Bottom Bar -->
-  <div class="bottom-bar">
-    <div class="context-chip">
-      <span>19:42</span>
-      <span class="separator">·</span>
-      <span>📍 Lisbon, Portugal</span>
-    </div>
-    <div class="scroll-hint-mini">
-      SCROLL
-      <span class="scroll-arrow">↓</span>
-    </div>
-    <div class="sound-chip">
-      <span>♪</span>
-      <span>Ambient Sound</span>
-      <span class="sound-status">On</span>
-    </div>
-  </div>
-
-</section>
-
-  <script src="hero.js"></script>
-  <script src="scroll1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
