@@ -202,7 +202,6 @@ if (nav) {
 
   const cuts = [1.9, 4.6, 6.85];
   let activeIndex = -1;
-  let activeDestination = -1;
 
   const timeline = gsap.timeline({
     defaults: { ease: 'none' },
@@ -427,8 +426,6 @@ if (nav) {
     )
     .to(feelSlideImages, { scale: 1, duration: 1.4, ease: 'power2.out' }, 6.95)
     .to(feelBar, { autoAlpha: 1, y: 0, duration: 0.65, ease: 'power2.out' }, 6.9)
-    .to(feelTrack, { xPercent: -33.3333, duration: 0.65, ease: 'power2.inOut' }, 7.55)
-    .to(feelTrack, { xPercent: -66.6667, duration: 0.65, ease: 'power2.inOut' }, 8.3);
 
   function updateActiveScene(progress) {
     const time = progress * timeline.duration();
@@ -438,28 +435,11 @@ if (nav) {
     else if (time >= cuts[1]) index = 2;
     else if (time >= cuts[0]) index = 1;
 
-    updateDestination(time);
-
     if (index === activeIndex) return;
 
     activeIndex = index;
     scenes.forEach((scene, sceneIndex) => {
       scene.classList.toggle('is-current', sceneIndex === index);
-    });
-  }
-
-  function updateDestination(time) {
-    const index = time >= 8.55 ? 2 : time >= 7.8 ? 1 : 0;
-    if (index === activeDestination) return;
-
-    activeDestination = index;
-
-    if (destinationCurrent) {
-      destinationCurrent.textContent = String(index + 1).padStart(2, '0');
-    }
-
-    destinationDots.forEach((dot, dotIndex) => {
-      dot.classList.toggle('is-active', dotIndex === index);
     });
   }
 
@@ -558,4 +538,53 @@ if (nav) {
   if (destinationButton) {
     destinationButton.dataset.nextPage = destinationButton.dataset.nextPage || 'city-selection';
   }
+})();
+
+// ==================== OPEN CITY SELECTION ====================
+(function () {
+  const btn = document.querySelector('.destination-btn');
+  const citySection = document.getElementById('city-selection');
+  if (!btn || !citySection) return;
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    citySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+
+(function(){
+  const track = document.querySelector('.destination-track');
+  const dots = document.querySelectorAll('.destination-dot');
+  const currentLabel = document.querySelector('.destination-current');
+  if(!track) return;
+
+  const total = track.querySelectorAll('.destination-slide').length;
+  if(!total) return;
+
+  let index = 0;
+  let timer;
+
+  function goTo(i){
+    index = (i+total)%total;
+    track.style.transition = 'transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
+    track.style.transform = `translateX(-${index * (100 / total)}%)`;
+
+    dots.forEach((dot, d) => dot.classList.toggle('is-active', d===index));
+    if(currentLabel){
+      currentLabel.textContent = String(index+1).padStart(2, '0');
+    }
+  }
+
+  function start(){
+    clearInterval(timer);
+    timer= setInterval(()=> goTo(index+1), 2800);
+  }
+  const gallery = document.querySelector('.destination-gallery');
+  if(gallery){
+    gallery.addEventListener('mouseenter', ()=> clearInterval(timer));
+    gallery.addEventListener('mouseleave', start);
+  }
+
+  goTo(0);
+  start();
 })();

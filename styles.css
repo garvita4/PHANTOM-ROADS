@@ -20,18 +20,24 @@
   box-sizing: border-box;
 }
 
+body, html{
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #0b0f19;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
 html {
-  background: var(--bg);
+  min-height: 100%;
+  scroll-behavior: auto;
 }
 
 body {
-  min-width: 320px;
-  overflow-x: hidden;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
-  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
+
+
 
 button,
 a {
